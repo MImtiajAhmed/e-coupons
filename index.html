@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ব্রান্ড নির্বাচন করুন</title>
+    <title>সিম নির্বাচন করুন</title>
     <style>
         /* General Styles */
         body {
@@ -17,7 +17,6 @@
             flex-direction: column;
             align-items: center;
         }
-
         .container {
             background-color: #ffffff;
             padding: 20px;
@@ -27,37 +26,31 @@
             width: 100%;
             margin: 20px auto;
         }
-
         /* Universal Box Sizing */
         *, *::before, *::after {
             box-sizing: border-box;
         }
-
         /* 3D Text Effect for Headings */
         h1, h2, h3 {
             text-shadow: 1px 1px 2px rgba(0,0,0,0.25); /* 3D ইফেক্ট */
             color: #1d2129; /* গাঢ় রঙ হেডিং এর জন্য */
         }
-
         h1 {
             text-align: center;
             color: #007bff; /* মূল শিরোনামের জন্য নীল রঙ */
             margin-bottom: 25px;
             font-size: 2em;
         }
-
         /* Input Section */
         .input-section {
             margin-bottom: 20px;
         }
-
         .input-section label {
             display: block;
             margin-bottom: 6px;
             font-weight: 600;
             color: #4b4f56;
         }
-
         .input-section input[type="text"],
         .input-section input[type="tel"] {
             width: 100%;
@@ -72,8 +65,6 @@
             box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
             outline: none;
         }
-
-
         /* SIM Options Styling */
         .sim-options {
             display: grid;
@@ -81,7 +72,6 @@
             gap: 15px;
             margin-bottom: 30px;
         }
-
         .sim-button {
             background-image: linear-gradient(to bottom, #ffffff, #f0f0f0); /* হালকা গ্রেডিয়েন্ট */
             border: 2px solid #dcdcdc;
@@ -97,31 +87,26 @@
             text-align: center;
             min-height: 100px; /* একটি নির্দিষ্ট উচ্চতা */
         }
-
         .sim-button:hover {
             transform: translateY(-4px) scale(1.03);
             box-shadow: 0 5px 15px rgba(0,0,0,0.12);
             border-color: #ababab;
         }
-
         .sim-button .traffic-light {
             font-size: 2em; /* ইমোজি বড় করা */
             margin-bottom: 8px;
             line-height: 1; /* ইমোজির অতিরিক্ত স্পেস কমাতে */
         }
-
         .sim-button .sim-logo {
             font-size: 1.1em;
             font-weight: bold;
             text-transform: uppercase;
         }
-
         /* SIM Logo Specific Colors (non-selected state) */
         .sim-logo.airtel { color: #e50914; }
         .sim-logo.robi { color: #6a0dad; } /* Robi Purple (slightly adjusted) */
         .sim-logo.grameenphone { color: #0073b1; }
         .sim-logo.banglalink { color: #f39c12; }
-
         /* Selected SIM Button Styling */
         .sim-button.selected {
             color: white; /* টেক্সটের রঙ সাদা */
@@ -133,8 +118,6 @@
         .sim-button.selected .traffic-light {
             /* ট্র্যাফিক লাইট ইমোজির রঙ পরিবর্তন করা কঠিন, তবে সাদা টেক্সট কনট্রাস্ট দিতে পারে */
         }
-
-
         .sim-button.selected[data-sim="Airtel"] {
             background-color: #e50914; /* Airtel Red */
             border-color: #c00710; /* Darker Airtel Red */
@@ -155,8 +138,6 @@
             border-color: #d08203; /* Darker Banglalink Orange */
             box-shadow: 0 0 12px rgba(243, 156, 18, 0.6);
         }
-
-
         /* Share Section */
         .share-section {
             background-color: #e9f5ff; /* হালকা নীল ব্যাকগ্রাউন্ড */
@@ -166,7 +147,6 @@
             margin-bottom: 25px;
             border: 1px dashed #007bff;
         }
-
         .share-section h2 {
             color: #0056b3;
             margin-top: 0;
@@ -180,7 +160,6 @@
             color: #333;
             font-size: 0.95em;
         }
-
         /* Action Buttons (Share, Confirm) */
         .action-button {
             color: white;
@@ -207,21 +186,18 @@
             transform: translateY(0);
             box-shadow: none;
         }
-
         #shareButton {
             background-color: #28a745; /* সবুজ */
         }
         #shareButton:hover:not(:disabled) {
             background-color: #218838; /* গাঢ় সবুজ */
         }
-
         #confirmButton {
             background-color: #007bff; /* নীল */
         }
         #confirmButton:hover:not(:disabled) {
             background-color: #0056b3; /* গাঢ় নীল */
         }
-
         /* Phone Input Section */
         #phoneInputSection {
             display: flex; /* ইনপুট এবং বাটন পাশাপাশি রাখার জন্য */
@@ -235,8 +211,6 @@
             flex-shrink: 0; /* বাটনটি সঙ্কুচিত হবে না */
             padding: 12px 20px; /* ইনপুটের সাথে উচ্চতা মেলাতে */
         }
-
-
         /* Message Area */
         .message-area {
             margin-top: 20px;
@@ -261,7 +235,6 @@
             color: #0c5460;
             border-color: #bee5eb;
         }
-
         /* Responsive adjustments */
         @media (max-width: 600px) {
             body {
@@ -290,7 +263,6 @@
             .sim-button .sim-logo {
                 font-size: 1em;
             }
-
             #phoneInputSection {
                 flex-direction: column; /* ছোট স্ক্রিনে ইনপুট ও বাটন নিচে নিচে */
                 align-items: stretch; /* আইটেমগুলো পুরো প্রস্থ নেবে */
@@ -303,7 +275,6 @@
                 margin-top: 10px; /* ফোন নম্বর ইনপুট এবং বাটনের মধ্যে ফাঁক */
             }
         }
-
         /* Banner Ad Container Styling (for placeholder) */
         .banner-ad-container {
             width: 100%;
@@ -319,8 +290,6 @@
             color: #555; /* Setting text color */
             text-align: center; /* Ensuring text is centered */
         }
-
-
         /* Social Bar Ad Placeholder Styling */
         .social-bar-ad-placeholder {
             width: 100%;
@@ -339,75 +308,64 @@
             font-weight: bold;
             color: #555;
         }
-
     </style>
+<script type='text/javascript' src='//marksdespitelinear.com/71/22/10/712210bd20d30c32aa2f0cbf8da9b70c.js'></script>
 </head>
 <body>
-
     <!-- ব্যানার বিজ্ঞাপন শুরু -->
     <div class="banner-ad-container">
         <script type="text/javascript">
 	atOptions = {
-		'key' : 'c4fdbc672b4f68042476ba1dc7bbd286',
+		'key' : '8b344487ef50cc5ad1cd3f2765e849c5',
 		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
+		'height' : 250,
+		'width' : 300,
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//marksdespitelinear.com/c4fdbc672b4f68042476ba1dc7bbd286/invoke.js"></script>
     </div>
     <!-- ব্যানার বিজ্ঞাপন শেষ -->
-
     <div class="container">
-        <h1>আপনার পছন্দের ব্রান্ড নির্বাচন করুন</h1>
-
+        <h1>আপনার সিম নির্বাচন করুন</h1>
         <div id="nameInputSection" class="input-section">
             <label for="sharerName">আপনার নাম (ঐচ্ছিক):</label>
             <input type="text" id="sharerName" placeholder="এখানে আপনার নাম লিখুন">
         </div>
-
         <div class="sim-options">
             <button class="sim-button" data-sim="Airtel">
                 <span class="traffic-light">🚦</span>
-                <span class="sim-logo airtel">আড়ং</span>
+                <span class="sim-logo airtel">airtel</span>
             </button>
             <button class="sim-button" data-sim="Robi">
                 <span class="traffic-light">🚦</span>
-                <span class="sim-logo robi">রিচম্যান</span>
+                <span class="sim-logo robi">robi</span>
             </button>
             <button class="sim-button" data-sim="Grameenphone">
                 <span class="traffic-light">🚦</span>
-                <span class="sim-logo grameenphone">ফ্রিল্যান্ড</span>
+                <span class="sim-logo grameenphone">grameenphone</span>
             </button>
             <button class="sim-button" data-sim="Banglalink">
                 <span class="traffic-light">🚦</span>
-                <span class="sim-logo banglalink">বাটা</span>
+                <span class="sim-logo banglalink">banglalink</span>
             </button>
         </div>
-
         <div class="share-section">
             <h2>বন্ধুদের সাথে শেয়ার করুন</h2>
-            <h3>পান ফ্রি ১০০০ টাকার কুপন</h3>
-            <p>১০০০টাকার কুপন পেতে ১০ জন বন্ধুর সাথে WhatsApp বা Facebook-এ শেয়ার করুন।</p>
+            <h3>পান ৫০ জিবি ইন্টারনেট</h3>
+            <p>৫০ জিবি ইন্টারনেট পেতে 10 জন বন্ধুর সাথে WhatsApp বা Facebook-এ শেয়ার করুন।</p>
             <button id="shareButton" class="action-button">শেয়ার করুন</button>
         </div>
-
         <div id="phoneInputSection" class="input-section" style="display: none; margin-top: 20px;">
             <input type="tel" id="phoneNumber" placeholder="আপনার ফোন নম্বর দিন (১১ সংখ্যা)">
             <button id="confirmButton" class="action-button">নিশ্চিত করুন</button>
         </div>
-
         <p id="messageArea" class="message-area"></p>
-
     </div>
-
     <!-- সোশ্যাল বার বিজ্ঞাপন প্লেসহোল্ডার শুরু -->
     <div class="social-bar-ad-placeholder">
-        <p><script type='text/javascript' src='//marksdespitelinear.com/73/7b/d2/737bd22d03d18197c0ee7ad91e2badd1.js'></script></p>
+        <p><script type='text/javascript' src='//marksdespitelinear.com/63/bf/98/63bf98082eb2a2b9f9cf9c579aeab258.js'></script></p>
     </div>
     <!-- সোশ্যাল বার বিজ্ঞাপন প্লেসহোল্ডার শেষ -->
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const simButtons = document.querySelectorAll('.sim-button');
@@ -417,10 +375,8 @@
             const phoneNumberInput = document.getElementById('phoneNumber');
             const confirmButton = document.getElementById('confirmButton');
             const messageArea = document.getElementById('messageArea');
-
             let selectedSim = null;
             let hasShared = false;
-
             simButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     simButtons.forEach(btn => btn.classList.remove('selected'));
@@ -429,41 +385,35 @@
                     
                     messageArea.textContent = '';
                     messageArea.className = 'message-area'; 
-
                     if (!hasShared) {
                         phoneInputSection.style.display = 'none';
                     }
                     console.log('Selected SIM:', selectedSim);
                 });
             });
-
             shareButton.addEventListener('click', async () => {
                 if (!selectedSim) {
-                    messageArea.textContent = 'অনুগ্রহ করে প্রথমে পছন্দের ব্রান্ড নির্বাচন করুন!';
+                    messageArea.textContent = 'অনুগ্রহ করে প্রথমে আপনার সিম নির্বাচন করুন!';
                     messageArea.className = 'message-area error';
                     return;
                 }
-
                 const sharerName = sharerNameInput.value.trim();
                 let shareText;
-
                 if (sharerName) {
-                    shareText = `"${sharerName}" আপনাকে এই অফারটি নিতে আমন্ত্রণ জানাচ্ছেন! আমি আমার ${selectedSim} শপিং এর জন্য একটি দারুণ অফার পেয়েছি। আপনিও লিঙ্কে ক্লিক করে ফ্রি কুপন পেতে পারেন!`;
+                    shareText = `"${sharerName}" আপনাকে এই অফারটি নিতে আমন্ত্রণ জানাচ্ছেন! আমি আমার ${selectedSim} সিমের জন্য একটি দারুণ অফার পেয়েছি। আপনিও লিঙ্কে ক্লিক করে ৫০ জিবি ফ্রি ইন্টারনেট পেতে পারেন!`;
                 } else {
-                    shareText = `দারুণ খবর! আমি আমার ${selectedSim} শপিং এর জন্য একটি বিশেষ অফার পেয়েছি। আপনিও লিঙ্কে ক্লিক করে অফারটি পেতে পারেন!`;
+                    shareText = `দারুণ খবর! আমি আমার ${selectedSim} সিমের জন্য একটি বিশেষ অফার পেয়েছি। আপনিও লিঙ্কে ক্লিক করে ৫০ জিবি ফ্রি ইন্টারনেট পেতে পারেন!`;
                 }
-
                 const shareData = {
-                    title: 'একটি দারুণ অফার! ১০০০ টাকার ফ্রি কুপন!',
+                    title: 'একটি দারুণ অফার! ৫০ জিবি ফ্রি ইন্টারনেট!',
                     text: shareText,
                     url: window.location.href
                 };
-
                 if (navigator.share) {
                     try {
                         await navigator.share(shareData);
                         console.log('Share action completed or dialog dismissed by user.');
-                        messageArea.textContent = 'শেয়ার করার পর, আপনার নম্বর দিন এবং মেসেজে ফ্রি কুপন বুঝে নিন।';
+                        messageArea.textContent = 'শেয়ার করার পর, আপনার নম্বর দিন এবং ৫০ জিবি ফ্রি ইন্টারনেট বুঝে নিন।';
                         messageArea.className = 'message-area success';
                         hasShared = true;
                         phoneInputSection.style.display = 'flex';
@@ -472,7 +422,6 @@
                         console.error('Error sharing:', error);
                         hasShared = false; 
                         phoneInputSection.style.display = 'none';
-
                         if (error.name === 'AbortError') {
                             messageArea.textContent = 'শেয়ার বাতিল করা হয়েছে। অফার পেতে অনুগ্রহ করে শেয়ার করুন।';
                             messageArea.className = 'message-area error';
@@ -491,50 +440,41 @@
                     console.log("Web Share API not supported. Allowing manual share and number input.");
                 }
             });
-
             confirmButton.addEventListener('click', () => {
                 const phoneNumber = phoneNumberInput.value.trim();
-
                 if (!selectedSim) {
-                    messageArea.textContent = 'ত্রুটি: ব্রান্ড নির্বাচন করা হয়নি। অনুগ্রহ করে প্রথমে একটি ব্রান্ড নির্বাচন করুন।';
+                    messageArea.textContent = 'ত্রুটি: সিম নির্বাচন করা হয়নি। অনুগ্রহ করে প্রথমে একটি সিম নির্বাচন করুন।';
                     messageArea.className = 'message-area error';
                     return;
                 }
-
                 if (!hasShared) {
                     messageArea.textContent = 'অফারটি সক্রিয় করতে অনুগ্রহ করে প্রথমে শেয়ার করুন।';
                     messageArea.className = 'message-area error';
                     phoneInputSection.style.display = 'none'; 
                     return;
                 }
-
                 if (!phoneNumber) {
                     messageArea.textContent = 'অনুগ্রহ করে আপনার ফোন নম্বর লিখুন।';
                     messageArea.className = 'message-area error';
                     phoneNumberInput.focus();
                     return;
                 }
-
                 if (!/^(01)\d{9}$/.test(phoneNumber)) {
                     messageArea.textContent = 'অনুগ্রহ করে একটি ১১ সংখ্যার সঠিক ফোন নম্বর লিখুন (যেমনঃ ০১xxxxxxxxx)।';
                     messageArea.className = 'message-area error';
                     phoneNumberInput.focus();
                     return;
                 }
-
-                messageArea.textContent = `ধন্যবাদ! আপনার ${selectedSim} নম্বরে (${phoneNumber}) ৭ দিনের মধ্যে কুপন পাঠানো হবে।`;
+                messageArea.textContent = `ধন্যবাদ! আপনার ${selectedSim} নম্বরে (${phoneNumber}) ২৪ ঘন্টার মধ্যে ৫০ জিবি ইন্টারনেট পাঠানো হবে।`;
                 messageArea.className = 'message-area success';
-
                 phoneNumberInput.disabled = true;
                 confirmButton.disabled = true;
                 sharerNameInput.disabled = true;
                 simButtons.forEach(button => button.disabled = true); 
                 shareButton.disabled = true; 
-
-                console.log(`Offer claimed for Coupon: ${selectedSim}, Sharer: ${sharerNameInput.value.trim()}, Phone: ${phoneNumber}`);
+                console.log(`Offer claimed for SIM: ${selectedSim}, Sharer: ${sharerNameInput.value.trim()}, Phone: ${phoneNumber}`);
             });
         });
     </script>
-
 </body>
 </html>
