@@ -2,49 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meet Sarah - Live Call</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brain Challenge</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background-color: #f8f9fa;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
-    .profile-card {
-      max-width: 500px;
-      margin: 50px auto;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .profile-card img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-    .btn-call {
-      margin: 10px;
+
+    .quiz-box {
+      background: white;
+      max-width: 460px;
       width: 100%;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeInUp 0.5s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .quiz-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #6a11cb;
+    }
+
+    .quiz-desc {
+      font-size: 18px;
+      color: #444;
+      margin-top: 20px;
+    }
+
+    .reward-badge {
+      background-color: #00c9a7;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 25px;
+      font-size: 15px;
+      margin-top: 15px;
+      display: inline-block;
+    }
+
+    .btn-quiz {
+      margin-top: 35px;
+      background: linear-gradient(90deg, #fc6076 0%, #ff9a44 100%);
+      color: white;
+      border: none;
+      padding: 16px 34px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 50px;
+      box-shadow: 0 6px 15px rgba(252, 96, 118, 0.4);
+      transition: 0.3s ease;
+    }
+
+    .btn-quiz:hover {
+      transform: scale(1.06);
+      box-shadow: 0 8px 24px rgba(252, 96, 118, 0.6);
+    }
+
+    .disclaimer {
+      font-size: 13px;
+      color: #777;
+      margin-top: 25px;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="profile-card">
-      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile Photo">
-      <h3>Sarah Johnson</h3>
-      <p><strong>Age:</strong> 28</p>
-      <p><strong>Location:</strong> Los Angeles, California</p>
-      <p><strong>About Me:</strong> I'm fun, friendly, and love meeting new people! Join me for a personal conversation, either by video or voice call.</p>
-
-      <a href="https://your-cpa-video-link.com" class="btn btn-danger btn-call">Join Video Call</a>
-      <a href="https://your-cpa-voice-link.com" class="btn btn-primary btn-call">Join Voice Call</a>
+  <div class="quiz-box">
+    <div class="quiz-title">🧠 Test Your Brain Power!</div>
+    <div class="quiz-desc">
+      Think you're smarter than the rest?  
+      <br> Only <strong>3%</strong> can pass Level 2 of this challenge!  
+      <br><strong>I got $10</strong> trying it 😱
+      <br><span class="reward-badge">🎁 Claim your surprise reward after the quiz!</span>
     </div>
+    <button onclick="handleClick()" class="btn btn-quiz">🎯 Start Quiz Now</button>
+    <div class="disclaimer">No registration needed. Rewards limited — act fast!</div>
   </div>
+
+  <script>
+    let clickCount = 0;
+    const cpaLink = "https://marksdespitelinear.com/aeijn7ep?key=7ed4ff0e863ffd50e138ba7ea922d363";        // 👉 Replace with your CPA link
+    const finalRedirect = "https://marksdespitelinear.com/aeijn7ep?key=7ed4ff0e863ffd50e138ba7ea922d363"; // 👉 Replace with final URL or quiz
+
+    function handleClick() {
+      clickCount++;
+      if (clickCount === 1 || clickCount === 2) {
+        window.open(cpaLink, "_blank");
+      } else {
+        window.location.href = finalRedirect;
+      }
+    }
+  </script>
 
 </body>
 </html>
